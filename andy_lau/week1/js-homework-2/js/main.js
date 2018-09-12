@@ -114,6 +114,7 @@ console.log(`NOTBAD`);
 const notBad = function (string) {
   const posNot = string.toLowerCase().indexOf("not");
   const posBad = string.toLowerCase().lastIndexOf("bad");
+  // not is present and before bad
   if (posNot !== -1 && posNot < posBad) {
     return `${string.slice(0, posNot)}good!`;
   } else if (posNot === -1 || posNot > posBad) {
