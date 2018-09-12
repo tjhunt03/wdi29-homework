@@ -26,8 +26,8 @@ const mixUp = function(string1, string2){
     return "TOO SHORT! Words must be 3 or more chars in length."
   }
   else {
-    let word1 = string2.slice(0,2);
-    let word2 = string1.slice(0,2);
+    let word1 = string2.slice(0 , 2);
+    let word2 = string1.slice(0 , 2);
     word1 = word1 + string1.slice(2 , string1.length);
     word2 = word2 + string2.slice(2 , string2.length);
     return `${word1} ${word2}`;
