@@ -11,31 +11,31 @@ const squareNumber = function(number) {
   let square = Math.pow(number, 2);
   console.log(`The result of squaring the number ${number} is ${square.toFixed(2)}`);
   return square;
-}
+};
 squareNumber(4);
 
 //Half a number
 const halfNumber = function(number) {
   let half = number/2;
-  console.log(`Half of ${number} is ${half.toFixed(2)}.`)
+  console.log(`Half of ${number} is ${half.toFixed(2)}.`);
   return half;
-}
+};
 halfNumber(6);
 
 //Percent of two numbers
 const percentOf = function(number1, number2) {
   let percent = (number1/number2) * 100;
-  console.log(`${number1} is ${percent.toFixed(2)}% of ${number2}`)
+  console.log(`${number1} is ${percent.toFixed(2)}% of ${number2}`);
   return percent;
-}
+};
 percentOf (9,40);
 
 //Area of circle
 const areaOfCircle = function(radius) {
   let area = Math.PI * Math.pow(radius, 2);
-  console.log(`The area of a circle with radius ${radius} is ${area.toFixed(2)}.`)
+  console.log(`The area of a circle with radius ${radius} is ${area.toFixed(2)}.`);
   return area;
-}
+};
 areaOfCircle(3);
 
 // Part 2
@@ -53,6 +53,6 @@ const operate = function(number) {
   let squareResult = squareNumber(halfResult);
   let areaResult = areaOfCircle(squareResult);
   let percentResult = percentOf(areaResult, Math.pow(areaResult, 2));
-}
+};
 
 operate(4);
