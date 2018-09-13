@@ -12,6 +12,7 @@ console.log("--------");
 const checkNumberLength = function (card) {
   const len = splitCardNum(card.number).length;
   if (len !== 16) {
+    //Could also write a function to invalidate card?
     card.error = "Number length not 16";
     card.valid = false;
   }
@@ -23,11 +24,12 @@ const allDigitsAreNumbers = function (card) {
   for (let i=0; i<arr.length; i+=1) {
     // check returned value from isNaN() function
     if(isNaN(parseInt(arr[i]))){
-      console.log(`Invalid character "${arr[i]}" detected at index ${i}`);
-      return false;
+      card.error = `Invalid character "${arr[i]}" detected at index ${i}`;
+      card.valid = false;
+      return card
     }
   }
-  return true;
+  return card;
 }
 
 const digitVarietyChecker = function (card) {
@@ -35,22 +37,24 @@ const digitVarietyChecker = function (card) {
   let digit = arr[0];
   for (let i=1; i<arr.length; i+=1) {
     if (arr[i] !== digit) {
-      return true;
+      return card;
     }
     digit = arr[i];
   }
-  console.log("All digits are the same");
-  return false;
+  card.error = "All digits are the same";
+  card.valid = false;
+  return card;
 }
 
 const finalDigitEven = function (card) {
   const arr = splitCardNum(card.number);
   const digit = arr[arr.length - 1];
   if (digit % 2 === 0) {
-    return true;
+    return card;
   }
-  console.log("Final digit is not even.");
-  return false;
+  card.error = "Final digit is not even.";
+  card.valid = false;
+  return card;
 }
 
 const sumOfDigitsChecker = function (card) {
@@ -60,10 +64,11 @@ const sumOfDigitsChecker = function (card) {
     total += parseInt(arr[i]);
   }
   if (total > 16) {
-    return true;
+    return card;
   }
-  console.log(`Sum of digits (${total}) is too low`);
-  return false;
+  card.error = `Sum of digits (${total}) is too low`;
+  card.valid = false;
+  return card;
 }
 
 const splitCardNum = function (str) {
@@ -74,6 +79,7 @@ const splitCardNum = function (str) {
 const validateCreditCard = function (cardStr) {
   let card = {
     number: cardStr,
+    //valid defaults to true
     valid: true
   };
 
@@ -90,7 +96,7 @@ const validateCreditCard = function (cardStr) {
 
 const removeDashes = function (str) {
   let newStr = str;
-  console.log(str);
+  //console.log(str);
   while(newStr.includes("-")){
     newStr = newStr.replace("-", "");
   }
@@ -123,7 +129,7 @@ const test = function (passOrFail, str) {
   card = validateCreditCard(str);
   console.log(`Card number valid = ${card.valid}`);
   if (!card.valid) {
-    console.log(`error = ${card.error}`);
+    console.log(`error: ${card.error}`);
   }
 }
 
