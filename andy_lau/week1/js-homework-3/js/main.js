@@ -14,7 +14,7 @@
 
 const answer = ["B", "A", "B", "B", "L", "E"];
 let guessed = [];
-for (i = 0; i < answer.length; i++) {
+for (let i = 0; i < answer.length; i++) {
   guessed.push("_");
 }
 console.log(guessed.join(" "));
@@ -27,18 +27,22 @@ const guessLetter = function (letter) {
     return console.log(`R.I.P restart your guesses. Refresh the page.`);
   }
 
+  if (guessed.join(" ") === answer.join(" ")) {
+    return console.log("You have won");
+  }
+
   let isGuessCorrect = false
-  for (i = 0; i < guessed.length; i++) {
+  for (let i = 0; i < guessed.length; i++) {
     if (letter === guessed[i]) {
       return console.log(`You have guessed the letter ${letter} already! Please try another letter.`);
     }
   }
 
-  for (i = 0; i < answer.length; i++) {
+  for (let i = 0; i < answer.length; i++) {
     if (letter === answer[i]) {
       isGuessCorrect = true;
       guessed[i] = letter;
-      reward = reward + 100;
+      reward = reward + (Math.random()*100);
     }
   }
 
@@ -49,7 +53,7 @@ const guessLetter = function (letter) {
 
   if (isGuessCorrect === false) {
     console.log(`Bad Luck! Please try again.`);
-    reward = reward - 100;
+    reward = reward - (Math.random()*100);
     console.log(`You have $${reward}.`);
     hangman = hangman + 1;
   }
@@ -184,8 +188,8 @@ console.log(reverseString("google"));
 
 const findLongestWord = function (array) {
   let lengthArray = [];
-  for (i = 0; i < array.length; i++) {
-    lengthArray[i] = array[i].length;
+  for (let i = 0; i < array.length; i++) {
+    lengthArray[i] = array[i].length; //filling lengthArray with elements equal to corresponding element.length of input array
   }
   let max = function(runningMaxLength, currentElement) {
     return Math.max(runningMaxLength, currentElement);
@@ -205,7 +209,7 @@ console.log(findLongestWord(["world", "hello", "log", "bee"]));
 
 const filterLongWords = function (array, number) {
   let lengthArray = [];
-  for (i = 0; i < array.length; i++) {
+  for (let i = 0; i < array.length; i++) {
     lengthArray[i] = array[i].length;
   }
   let compare = function(element) {
