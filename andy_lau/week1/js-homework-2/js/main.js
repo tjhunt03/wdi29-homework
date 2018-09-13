@@ -90,7 +90,7 @@ const verbing = function (string) {
     return `${string}ly`;
   } else if (string.length <= 3) {
     return `${string}`;
-  };
+  }
 };
 
 console.log(verbing("swim"));
