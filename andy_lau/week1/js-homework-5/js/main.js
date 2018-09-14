@@ -35,7 +35,6 @@ const cashRegister = function (cart) {
   console.log(amount);
 };
 
-// bank as object. account is a key with array as value. getTotal is a method.
 //  js-homework-bank.md
 // JavaScript Bank
 // In this homework, you'll create a basic bank in Javascript. The bank has many accounts and the following capabilities that you need to write.
@@ -61,9 +60,18 @@ const bank = {
     {accountName: "Bob", balance: 20.50},
     {accountName: "Gary", balance: 12.45},
     {accountName: "Harry", balance: 100},
-    {accountName: "Michael", balance: 9010},
+    {accountName: "Mike", balance: 9010},
   ],
-  getTotalBalance: function(name) {
+
+  getTotal: function(){
+    let sum = 0;
+    for (let i = 0; i <this.accounts.length; i++) {
+      sum = sum + this.accounts[i].balance;
+    }
+    console.log(sum);
+  },
+
+  getBalance: function(name) {
     for (let i = 0; i < this.accounts.length; i++) {
       if (this.accounts[i].accountName === name) {
         console.log(`You have $${this.accounts[i].balance} in your bank account.`);
@@ -74,7 +82,7 @@ const bank = {
   deposit: function(name, depositAmount) {
     for (let i = 0; i < this.accounts.length; i++) {
       if (this.accounts[i].accountName === name && depositAmount > 0) {
-        this.accounts[i].balance = this.accounts[i].balance + depositAmount;
+        this.accounts[i].balance += depositAmount;
         return console.log(`You have deposited $${depositAmount}. Your balance is now $${this.accounts[i].balance}.`)
       } else if (depositAmount < 0) {
         return console.log(`Can not deposit a negative amount of $${depositAmount}`)
@@ -98,31 +106,33 @@ const bank = {
       if (this.accounts[i].accountName === name) {
         delete this.accounts[i];
         return console.log(`You have deleted your account. Thank you ${name}`);
+      } else {
+        return console.log("You do not have an account.");
       }
     }
   },
 
   addAccount: function(name, depositAmount) {
-    let newArrayAccount = {
-      accountName: name, balance: depositAmount
-    }
+    let newArrayAccount = {accountName: name, balance: depositAmount};
     if (depositAmount > 0) {
       this.accounts.push(newArrayAccount);
-      console.log(`Thank you for adding your account ${name}. Your balance is $${depositAmount}`);
+      console.log(`Thank you for adding your account ${name}. Your balance is $${depositAmount}.`);
     } else if (depositAmount < 0) {
       console.log(`${name} please deposit a positive amount to your new account.`);
     }
   },
 
-  transfer: function(name1, name2, amount) {
+  transfer: function(depositName, withdrawName, amount) {
     for (let i = 0; i < this.accounts.length; i++) {
       for (let j = 0; j < this.accounts.length; j++){
-        if (this.accounts[i].accountName === name1 && this.accounts[j].accountName === name2 && amount < this.accounts[j].balance && amount > 0) {
-          this.accounts[i].balance = amount + this.accounts[j].balance;
+        if (this.accounts[i].accountName === depositName && this.accounts[j].accountName === withdrawName && amount <= this.accounts[j].balance && amount > 0 && this.accounts[i].accountName !== this.accounts[j].accountName) {
+          this.accounts[i].balance += amount
           this.accounts[j].balance = this.accounts[j].balance - amount;
-          return console.log(`${name1} has withdrawn ${amount} from ${name2}'s account.\n${name1}: $${this.accounts[i].balance}\n${name2}: $${this.accounts[j].balance}`);
-        } else if ((amount < 0 || amount > this.accounts[j].balance) && this.accounts[j].accountName === name2) {
-           return console.log(`Hello ${name1}. You cannot transfer $${amount} from ${name2}'s account.\n${name1}: $${this.accounts[i].balance}\n${name2}: $${this.accounts[j].balance}`);
+          return console.log(`${depositName} has withdrawn ${amount} from ${withdrawName}'s account.\n${depositName}: $${this.accounts[i].balance}\n${withdrawName}: $${this.accounts[j].balance}`);
+        } else if ((amount < 0 || amount > this.accounts[j].balance) && this.accounts[j].accountName === withdrawName) {
+           return console.log(`Hello ${depositName}. You cannot transfer $${amount} from ${withdrawName}'s account.\n${depositName}: $${this.accounts[i].balance}\n${withdrawName}: $${this.accounts[j].balance}`);
+        } else if (this.accounts[i].accountName === this.accounts[j].accountName) {
+          return console.log("Can't transfer to same account.");
         }
       }
     }
@@ -139,7 +149,8 @@ const bank = {
 // Begin exploring the JavaScript Koans. Fork, clone and start trying them.
 //
 // Credit Card Validation
-// You're starting your own credit card business. You've come up with a new way to validate credit cards with a simple function called validateCreditCard that returns true or false.
+// You're starting your own credit card business.
+// You've come up with a new way to validate credit cards with a simple function called validateCreditCard that returns true or false.
 //
 // Here are the rules for a valid number:
 //
@@ -160,7 +171,45 @@ const bank = {
 // Example
 // validateCreditCard('9999-9999-8888-0000'); // Returns: true
 // Hint: Remove the dashed from the input string before checking if the input credit card number is valid.
-
+//
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+// const validateCreditCard = function (cardNumber) {
+//   let valid = true;
+//
+//   //Check card number has hypen between every 4 numbers
+//   if (cardNumber.charAt(4) !== "-" || cardNumber.charAt(9) !== "-" || cardNumber.charAt(14) !== "-" ) {
+//     return valid = false;
+//   }
+//
+//   //Check card number length
+//   if (cardNumber.length !== 19){
+//     return valid = false;
+//   }
+//   let digitCheck = true
+//   //Check every if digits 1-4
+//   for (i = 0; i < 4; i++) {
+//     if (cardNumber.charAt(i) !== "0") {
+//       digitCheck = isNaN(Number(cardNumber.charAt(i)));
+//     }
+//     if (digitCheck === false && cardNumber.charAt(i) !== "0") {
+//       return valid = false;
+//     }
+//   }
+//
+//
+//   //Check final number is even
+//   if (cardNumber.charAt(18) % 2 !== 0 ) {
+//     return valid = false;
+//   }
+//
+//   let cardArray = [];
+//   for (i = 0; i < cardNumber.length; i++) {
+//     if (i === 4 || i === 9 || i === 14 ) { continue; }
+//     cardArray.push(cardNumber.charAt(i));
+//   }
+//   console.log(cardArray);
+// };
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 //
@@ -169,3 +218,92 @@ const bank = {
 // { valid: true, number: 'a923-3211-9c01-1112' }
 // { valid: false, number: 'a923-3211-9c01-1112', error: ‘wrong_length’ }
 // Double Bonus: Make your credit card scheme even more advanced! What are the rules, and what are some numbers that pass or fail? Ideas: check expiration date! Check out the Luhn Algorithm for inspiration.
+
+
+// **********
+const validateCreditCard = function (cardNumber) {
+  let cardNoDash = "";
+  cardNoDash = cardNumber.replace(/-/g, "");
+
+  const creditCard = {
+    valiator: true,
+    number: cardNumber,
+
+    //check card length = 16
+    cardLength: function(card) {
+      if (cardNoDash.length !== 16) {
+        this.error += "wrong_length ";
+        validator = false;
+      }
+    },
+
+    //check all input are digits
+    allDigitCheck: function(card) {
+      if (!parseInt(Number(card)) {
+        this.error += "wrong_input ";
+        validator = false;
+      }
+    },
+
+    //check last number is even
+    // lastEvenNumber: function(card) {
+    //   if (Number(card) % 2 !== 0) {
+    //     this.error += "last_number_not_even ";
+    //     validator = false;
+    //   }
+    // },
+
+    //check digit sum is 16
+    digitSum: function(card) {
+      let value = Number(card);
+      let sum = 0;
+
+      while (value) { //while value is true (it is going to be true as long as value is a number)
+        sum += value % 10;
+        value = Math.floor(value / 10);
+      }
+
+      if (sum < 16) {
+        this.error += "digits_add_to_less_than_16 "
+        validator = false;
+      }
+    },
+
+    //check at least 2 digits
+    twoDigits: function(card) {
+      let string = card;
+      let unique = "";
+      for (let i = 0; i < string.length; i++) {
+        if(unique.indexOf(string.charAt(i))==-1); {
+          unique += string[i];
+        }
+      }
+      if (unique.length === 1) {
+        this.error += "needs_at_least_2_digits "
+        validator = false;
+      }
+    }
+
+  }; //object creditCard
+
+  creditCard.cardLength(cardNoDash);
+  creditCard.allDigitCheck(cardNoDash);
+  // creditCard.lastEvenNumber(cardNoDash);
+  creditCard.digitSum(cardNoDash);
+  creditCard.twoDigits(cardNoDash);
+
+  const finalResult = {
+    valid: false,
+    number: cardNumber,
+  };
+
+  if (creditCard.error === "" && valiator === true) {
+    finalResult.valid === true;
+
+  } else {
+    finalResult.valid === false;
+    finalResult.error = creditCard.error;
+  }
+
+  console.log(finalResult);
+};//function
