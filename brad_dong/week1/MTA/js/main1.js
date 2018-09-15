@@ -30,26 +30,17 @@
 //     'L' : ['8th', '6th', 'Union Square', '3rd', '1st'],
 //     '6' : ['Grand Central', '33rd', '28th', '23rd', 'Union Square', 'Astor Place']
 //   },  //end lines object
-//   unionIndex :{
+//   indexOf('Union Square') :{
 //     'N' : 4,
 //     'L' : 2,
 //     '6' : 4
-//   } //end unionIndex object
+//   } //end indexOf('Union Square') object
 // } //end MTA object
 
 const MTA = {
-  'N': {
-    stops: ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th'],
-    unionIndex : 4
-  },  //end of N line object
-  'L': {
-    stops: ['8th', '6th', 'Union Square', '3rd', '1st'],
-    unionIndex : 2
-  }, //end of L line object
-  '6': {
-    stops: ['Grand Central', '33rd', '28th', '23rd', 'Union Square', 'Astor Place'],
-    unionIndex : 4
-  }//end of 6 line ojbect
+  'N': ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th'],
+  'L': ['8th', '6th', 'Union Square', '3rd', '1st'],
+  '6': ['Grand Central', '33rd', '28th', '23rd', 'Union Square', 'Astor Place']
 } //end of MTA object
 
 
@@ -57,7 +48,7 @@ const planTrip = function(line1, start, line2, end){
   //check if line1 and line2 actually exist
   let validLine = [];
   for (value in MTA){
-    validLine.push(value);
+    validLine.push(value);   //array of lines
   };
   if (validLine.indexOf(line1)===-1){
     return `Invalid staring line`;
@@ -73,12 +64,12 @@ const planTrip = function(line1, start, line2, end){
 
 // start and end on same line
   if (line1 === line2){
-    let getLine = MTA[line1].stops;   //gets array of chosen line
-    let startIndex = MTA[line1].stops.indexOf(start);
+    let getLine = MTA[line1];   //gets array of chosen line
+    let startIndex = MTA[line1].indexOf(start);
     if (startIndex === -1){
       return 'Invalid starting station';
     };
-    let endIndex = MTA[line1].stops.indexOf(end);
+    let endIndex = MTA[line1].indexOf(end);
     if (endIndex=== -1){
       return 'Invalid ending station';
     };
@@ -90,36 +81,36 @@ const planTrip = function(line1, start, line2, end){
     }else{  //end stops is negative
       stopNames = getLine.slice(endIndex,startIndex).reverse().join(', ');
     }   // end stops is positive
-    return `You're travels on the ${line1} line, from ${start} to ${end} is through the following stops: ${stopNames}.  There are ${stops} stops.`;
+    return `Your travels on the ${line1} line, from ${start} to ${end} is through the following stops: ${stopNames}.  There are ${stops} stops.`;
 
   }else{      //end single line, for multi lines
     //travel to union station
-    let getLine1 = MTA[line1].stops;  //array of stops on line1
-    let startIndex = MTA[line1].stops.indexOf(start);
+    let getLine1 = MTA[line1];  //array of stops on line1
+    let startIndex = MTA[line1].indexOf(start);
     if (startIndex=== -1){
       return 'Invalid start station';
     };
-    let stopsToUnion = startIndex - MTA[line1].unionIndex;
+    let stopsToUnion = startIndex - MTA[line1].indexOf('Union Square');
     let stopsToUnionArray = [];
     if (stopsToUnion<0){  //negative stops, going forward
       stopsToUnion = stopsToUnion * (-1);
-      stopsToUnionArray = getLine1.slice(startIndex+1, MTA[line1].unionIndex+1).join(', ');
+      stopsToUnionArray = getLine1.slice(startIndex+1, MTA[line1].indexOf('Union Square')+1).join(', ');
     }else{    //positive stops, going backwards
-      stopsToUnionArray = getLine1.slice(MTA[line1].unionIndex, startIndex).reverse().join(', ');
+      stopsToUnionArray = getLine1.slice(MTA[line1].indexOf('Union Square'), startIndex).reverse().join(', ');
     }
     //travel from union station
-    let getLine2 = MTA[line2].stops;  //array of stops on line2
-    let endIndex = MTA[line2].stops.indexOf(end);
+    let getLine2 = MTA[line2];  //array of stops on line2
+    let endIndex = MTA[line2].indexOf(end);
     if (endIndex === -1){
       return 'Invalid ending station';
-    };git
-    let stopsFromUnion = MTA[line2].unionIndex - endIndex;
+    };
+    let stopsFromUnion = MTA[line2].indexOf('Union Square') - endIndex;
     let stopsFromUnionArray = [];
     if (stopsFromUnion<0){  //negative stops, going forward
       stopsFromUnion = stopsFromUnion * (-1);
-      stopsFromUnionArray = getLine2.slice(MTA[line2].unionIndex+1, endIndex+1).join(', ');
+      stopsFromUnionArray = getLine2.slice(MTA[line2].indexOf('Union Square')+1, endIndex+1).join(', ');
     }else{    //positive stops, going backwards
-      stopsFromUnionArray = getLine2.slice(endIndex,MTA[line2].unionIndex).reverse().join(', ');
+      stopsFromUnionArray = getLine2.slice(endIndex,MTA[line2].indexOf('Union Square')).reverse().join(', ');
     }
 
     return `You must travel through the following stops on the ${line1} line: ${stopsToUnionArray}.  Change at Union Square.  Your journey continues through the following stops: ${stopsFromUnionArray}.  There are ${stopsToUnion+stopsFromUnion} stops in total.`;
