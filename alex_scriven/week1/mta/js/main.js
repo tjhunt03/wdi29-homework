@@ -108,7 +108,9 @@ const railSystem = {
     }
     if (this.currentStop === "Union Square") {
       let lineOneStops = this.listStopsOnLine(finalLine, currentStop, finalStop);
+      const totalStops = lineOneStops.length;
       console.log(`You must travel through the following stops on the ${finalLine} Line: ${lineOneStops.join(", ")}`);
+      console.log(`${totalStops} stops in total`);
       return
     } //Special case of starting at union square. Ignore whatever line they say they are on to start.
     if (this.needToChangeLines()){
@@ -116,12 +118,15 @@ const railSystem = {
       console.log(`You must travel through the following stops on the ${currentLine} Line: ${lineOneStops.join(", ")}`)
       console.log('Change at Union Square')
       let lineTwoStops = this.listStopsOnLine(finalLine, 'Union Square', finalStop);
-      // lineTwoStops.push(finalStop);
       console.log(`Your journey continues through the following stops on the ${finalLine} Line: ${lineTwoStops.join(", ")}`);
+      const totalStops = lineOneStops.length + lineTwoStops.length;
+      console.log(`${totalStops} stops in total`);
       return
     }
     let lineOneStops = this.listStopsOnLine(currentLine, currentStop, finalStop);
     console.log(`You must travel through the following stops on the ${currentLine} Line: ${lineOneStops.join(", ")}`);
+    const totalStops = lineOneStops.length;
+    console.log(`${totalStops} stops in total`);
   }
 };
 
