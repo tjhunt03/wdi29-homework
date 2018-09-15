@@ -31,45 +31,46 @@ const railSystem = {
   },
 
   checkStopExists : function(stopName) {
-    let exists = false;
     for (key in this.railLine){
       for (i=0; i<this.railLine[key].length; i++){
         if (this.railLine[key][i] === stopName){
-          exists = true;
-          return exists
+          return true
         }
       }
     }
-    return exists
+    return false
   }, //checkStopExists
 
   checkLineExists : function(lineName) {
-    let exists = false;
     for(key in this.railLine){
       if (lineName === key) {
-        exists = true;
-        return exists
+        return true
       }
     }
-    return exists
+    return false
   },
   //Checks if they are at the station and stop they are asking to get to
   checkNoMovement: function() {
-    let noMovement = false;
     if ((this.currentLine === this.finalLine) && (this.currentStop === this.finalStop)){
-      noMovement = true;
+      return true
     }
-    return noMovement
+    return false
   },
+
   needToChangeLines : function(){
-    let needToChange = true;
     if (this.currentLine === this.finalLine) {
-      needToChange = false;
-      return needToChange
+      return false
     }
-    return needToChange
+    return true
   }, //needToChangeLines
 
+  stopExistsOnLine: function(line, stop){
+    const stations = this.railLine[line]
+    if (stations.indexOf(stop) > -1){
+      return true
+    }
+    return false
+  },
 
   listStopsOnLine: function(line, startStation, endStation){
     const relevantLineStations = this.railLine[line]
@@ -87,6 +88,12 @@ const railSystem = {
     this.currentStop = currentStop;
     this.finalLine = finalLine;
     this.finalStop = finalStop;
+
+    if ((this.stopExistsOnLine(currentLine, currentStop) ===false) || (this.stopExistsOnLine(finalLine, finalStop) ===false)){
+      console.log('Sorry, one of your stops is not on the line you requested.');
+      return
+    }
+
     if ((this.checkLineExists(currentLine)===false) || (this.checkLineExists(finalLine)===false)){
       console.log(`Sorry one of the lines you entered does not exist. Try again`)
       return
