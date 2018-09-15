@@ -54,10 +54,24 @@ const MTA = {
 
 
 const planTrip = function(line1, start, line2, end){
+  //check if line1 and line2 actually exist
+  let validLine = [];
+  for (value in MTA){
+    validLine.push(value);
+  };
+  if (validLine.indexOf(line1)===-1){
+    return `Invalid staring line`;
+  };
+  if (validLine.indexOf(line2)===-1){
+    return `Invalid ending line`;
+  };
+
+  //check if start and end are same
   if (line1===line2 && start===end){
     return `You are already at your destination.`
   }
 
+// start and end on same line
   if (line1 === line2){
     let getLine = MTA[line1].stops;   //gets array of chosen line
     let startIndex = MTA[line1].stops.indexOf(start);
@@ -98,7 +112,7 @@ const planTrip = function(line1, start, line2, end){
     let endIndex = MTA[line2].stops.indexOf(end);
     if (endIndex === -1){
       return 'Invalid ending station';
-    };
+    };git
     let stopsFromUnion = MTA[line2].unionIndex - endIndex;
     let stopsFromUnionArray = [];
     if (stopsFromUnion<0){  //negative stops, going forward
