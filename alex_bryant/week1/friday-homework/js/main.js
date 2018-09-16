@@ -71,6 +71,17 @@ const railway = {
 
   //// Methods to calculate the journey ////
 
+  Journey: function (ln1, stat1, ln2, stat2) {
+    return{
+      startLine: ln1,
+      endLine: ln2,
+      startStation: stat1,
+      endStation: stat2,
+      singleLineJourneys: [],
+      validJourney: true
+    };
+  },
+
   //Calculates the route through a single line journey
   //Returns an array of stations
   singleLineJourney: function (ln1, stat1, stat2) {
@@ -102,81 +113,91 @@ const railway = {
   fullJourney: function (ln1, stat1, ln2, stat2) {
     console.log(`Requested journey: From ${stat1} on the ${ln1} line to ${stat2} on the ${ln2} line.`);
     //Check the journey validity first
-    validJourney = this.checkJourneyValidity(ln1, stat1, ln2, stat2);
+    const journey = new this.Journey(ln1, stat1, ln2, stat2);
+    //console.log(journey);
+    journey.validJourney = this.journeyValidityChecker(journey).validJourney;
 
     //console.log(`line ${ln1}, station ${stat1} going to line ${ln2}, station ${stat2}`);
     //If the line is the same for both stations
-    if (validJourney) {
-      let stationCount = 0;
-      if (ln1 === ln2) {
-        let stationsRequired = this.singleLineJourney(ln1, stat1, stat2);
-        stationCount += (stationsRequired.length - 1);
-        this.journeyLogger(stationsRequired, [ln1], false, true);
+    if (journey.validJourney) {
+      if (journey.startLine === journey.endLine) {
+        let stationsRequired = this.singleLineJourney(journey.startLine, journey.startStation, journey.endStation);
+        journey.singleLineJourneys.push(stationsRequired);
+        this.journeyLogger(journey);
       } else {
         //Here the journey must be split into two journeys with a change at Union Square
-        let stationsRequired = this.singleLineJourney(ln1, stat1, this.intersection);
-        stationCount += (stationsRequired.length - 1);
-        this.journeyLogger(stationsRequired, [ln1], true, true);
-        stationsRequired = this.singleLineJourney(ln2, this.intersection, stat2);
-        stationCount += (stationsRequired.length - 1);
-        this.journeyLogger(stationsRequired, [ln2], false, false);
+        let stationsRequired = this.singleLineJourney(journey.startLine, journey.startStation, this.intersection);
+        journey.singleLineJourneys.push(stationsRequired);
+        stationsRequired = this.singleLineJourney(journey.endLine, this.intersection, journey.endStation);
+        journey.singleLineJourneys.push(stationsRequired);
+        this.journeyLogger(journey);
       }
-      console.log(`${stationCount} stops in total.`);
     }
   },
 
-  checkJourneyValidity: function (ln1, stat1, ln2, stat2) {
+  journeyValidityChecker: function (journey) {
+    const ln1 = journey.startLine;
+    const stat1 = journey.startStation;
+    const ln2 = journey.endLine;
+    const stat2 = journey.endStation;
     //Check lines exist
     if(!Object.keys(this.lines).includes(ln1)) {
       console.log(`The "${ln1}" line does not exist!`);
-      return false;
+      journey.validJourney = false;
+      return journey;
     } else if (!Object.keys(this.lines).includes(ln2)) {
       console.log(`The "${ln2}" line does not exist!`);
-      return false;
+      journey.validJourney = false;
+      return journey;
     }
     //Check stations exist
     if(!Object.keys(this.lines[ln1]).includes(stat1)) {
       console.log(`The station "${stat1}" does not exist on the ${ln1} line!`);
-      return false;
+      journey.validJourney = false;
+      return journey;
     } else if (!Object.keys(this.lines[ln2]).includes(stat2)) {
       console.log(`The station "${stat2}" does not exist on the ${ln2} line!`);
-      return false;
+      journey.validJourney = false;
+      return journey;
     }
     //Check the station isn't the same
     if(ln1 === ln2 && stat1 === stat2) {
       console.log(`There is no need to travel. You are already at ${stat1} on the ${ln1} line.`);
-      return false;
+      journey.validJourney = false;
+      return journey;
     }
     //Check Union Square isn't quoted on another line
     if (ln1 !== ln2 && (stat1 === this.intersection || stat2 === this.intersection)) {
       console.log(`${this.intersection} also exists on the ${ln1} line.`);
-      //console.log(`Rerouting the journey.`);
-      this.fullJourney(ln1,stat1,ln1,stat2);
-      return false;
+      journey.endLine = ln1;
     }
-    return true;
+    return journey;
   },
 
   //accepts array required stations, line travelled, whether passenger is changing line, whether start of journey
-  journeyLogger: function (stationsRequired, line, change, start) {
-    //Log starting location if not a change of lines
-    if(start) {
-      console.log(`Starting at ${stationsRequired[0]} on the ${line} line.`);
+  journeyLogger: function (journey) {
+    const stationsRequired = journey.singleLineJourneys;
+    let stationsTravelled = 0;
+    //console.log(stationsRequired);
+    for (let i=0; i<stationsRequired.length; i+=1) {
+      let statement = "Continue";
+      if(i === 0) {
+        //Log starting location if not a change of lines
+        console.log(`Starting at ${journey.startStation} on the ${journey.startLine} line.`);
+        statement = "You must travel";
+      }
+      //We don't need to mention the starting station
+      stationsRequired[i].shift();
+      console.log(`${statement} through the following stops on the ${journey.startLine} line: ${stationsRequired[i].join(", ")}.`);
+      stationsTravelled += stationsRequired[i].length;
+      if (i < (stationsRequired.length - 1)) {
+        //Change is required
+        console.log(`Change at ${stationsRequired[i][stationsRequired[i].length - 1]}.`);
+      }
     }
-    //We don't need to mention the starting station
-    stationsRequired.shift();
-    //Set the quoted statement based on whether the person is starting or changing on their journey
-    let statement = "You must travel";
-    if (!start) {
-      statement = "Continue"
-    }
-    console.log(`${statement} through the following stops on the ${line} line: ${stationsRequired.join(", ")}.`);
-    //Log if passenger has arrived or are changing line
-    if (change) {
-      console.log(`Change at ${stationsRequired[stationsRequired.length - 1]}.`);
-    } else {
-      console.log(`You will arrive at your destination ${stationsRequired[stationsRequired.length - 1]}.`);
-    }
+    //Log if passenger has arrived at final station
+    console.log(`You will arrive at your destination ${journey.endStation}.`);
+    console.log(`${stationsTravelled} stop(s) in total.`);
   },
 
 };
