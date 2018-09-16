@@ -228,6 +228,7 @@ const validateCreditCard = function (cardNumber) {
   const creditCard = {
     valiator: true,
     number: cardNumber,
+    error: {},
 
     //check card length = 16
     cardLength: function(card) {
