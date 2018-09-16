@@ -181,14 +181,17 @@ const railway = {
     //console.log(stationsRequired);
     for (let i=0; i<stationsRequired.length; i+=1) {
       let statement = "Continue";
+      let line = journey.startLine;
       if(i === 0) {
         //Log starting location if not a change of lines
-        console.log(`Starting at ${journey.startStation} on the ${journey.startLine} line.`);
+        console.log(`Starting at ${journey.startStation} on the ${line} line.`);
         statement = "You must travel";
+      } else {
+        line = journey.endLine;
       }
       //We don't need to mention the starting station
       stationsRequired[i].shift();
-      console.log(`${statement} through the following stops on the ${journey.startLine} line: ${stationsRequired[i].join(", ")}.`);
+      console.log(`${statement} through the following stops on the ${line} line: ${stationsRequired[i].join(", ")}.`);
       stationsTravelled += stationsRequired[i].length;
       if (i < (stationsRequired.length - 1)) {
         //Change is required
