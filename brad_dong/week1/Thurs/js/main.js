@@ -140,12 +140,14 @@ const bank = {
       if (this.accounts[i].name===nam){
         return this.accounts[i];
       }
-    };
+    }
+    console.log('No such customer found');
+    return {};
   },
   totalSum: function(){
     let sumTotal = 0;
     for (let i=0; i<this.accounts.length; i++){
-      sumTotal = sumTotal + this.accounts[i].currentBalance;
+      sumTotal +=this.accounts[i].currentBalance;
     }
     console.log(sumTotal);
   },
@@ -163,12 +165,24 @@ const bank = {
     this.accounts[noOfAccounts] = {};
     this.accounts[noOfAccounts].name = nam;
     this.accounts[noOfAccounts].currentBalance = amount;
+    //
+    // const newAccount = {
+    //   name: nam,
+    //   currentBalance: amount
+    // };
+    //
+    // this.accounts.push( newAccount );
+
+    // this.accounts.push({ name: nam, currentBalance: amount });
+
+
     console.log(this.accounts);
   },
   deposits: function(nam, amount){
     try{
       let currentCustomer = this.findCustomer(nam);
-      console.log(currentCustomer.currentBalance+=amount);
+      currentCustomer.currentBalance+=amount
+      console.log(currentCustomer.currentBalance);
     }
     catch(err){
       console.log('No such customer');
@@ -178,7 +192,7 @@ const bank = {
     try{
       let currentCustomer = this.findCustomer(nam);
       if (amount>currentCustomer.currentBalance){
-        console.log(`You don\'t have enough money to withdraw $${amount}.`);
+        console.log(`You don't have enough money to withdraw $${amount}.`);
       }else{
         console.log(currentCustomer.currentBalance-=amount);
       }
@@ -230,14 +244,34 @@ const bank = {
 // The sum of all the digits must be greater than 16
 // The following credit card numbers are valid:
 //
-// 9999-9999-8888-0000
-// 6666-6666-6666-1666
+ const ccTry = '999-7619-8888-0000';
+// 6666-6666-6666-1666s
 // The following credit card numbers are invalid:
 //
 // a923-3211-9c01-1112 invalid characters
 // 4444-4444-4444-4444 only one type of number
 // 1111-1111-1111-1110 sum less than 16
 // 6666-6666-6666-6661 odd final number
+const validateCreditCard = function(num){
+  let isValid = true;
+  let array=num.split('');
+  //create an array with without dashes
+  let arrayNoDash=[];
+  for (let i=0; i<array.length;i++){
+    if (array[i]!=='-'){
+      arrayNoDash.push(array[i]);
+    }//if
+  } //for
+  if(arrayNoDash.some(isNaN) || arrayNoDash.length!==16){
+    isValid = false
+  } //if
+
+  //check if all numerals are equal
+
+  //
+  console.log(isValid);
+}; //main
+validateCreditCard(ccTry);
 // Example
 // validateCreditCard('9999-9999-8888-0000'); // Returns: true
 // Hint: Remove the dashed from the input string before checking if the input credit card number is valid.
