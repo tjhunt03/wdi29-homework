@@ -61,6 +61,8 @@ const guessLetter = function (guessedLet) {
     }
 
     //Check if the game has completed
+    //Comparing two numbers is a simpler and more 'cost effective' way to do this comparision computationally
+    //The .join() method is using more resources and looping
     if (lettersOfWord.join("") === curGuessedLets.join("")) {
       console.log(`You guessed the word ${lettersOfWord.join("")}!`);
       console.log(`Total won = $${totalWon}`);
