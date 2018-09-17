@@ -37,7 +37,6 @@
 // you might have to make sure the stops that are the same for different lines have different names
 // (i.e. 23rd on the N and on the 6 need to be differentiated)
 
-
 // ***************** CODE FOR JUST LINE N *****************
 // const  nTrip = function (startStop, endStop) {
 //   const lineN = ["Times Square", "34th", "28th", "23rd", "Union Square", "8th"];
@@ -57,6 +56,7 @@
 // };
 //**********************************************************
 
+// dont need allLines object
 const MTA = {
   allLines: {
     'N': ["Times Square", "34th", "28th", "23rd", "Union Square", "8th"],
@@ -95,15 +95,23 @@ const totalLengthStops = function (array) {
 };
 
 const planTrip = function(startLine, startStop, endLine, endStop) {
-  // checking valid line
-  if (!Object.keys(MTA.allLines).includes(startLine) || !Object.keys(MTA.allLines).includes(endLine)) {
-    return console.log(`Invalid line. Please enter line 'N', 'L' or '6'.`);
+  // checking valid start line
+  if (!Object.keys(MTA.allLines).includes(startLine)) {
+    return console.log(`Invalid starting line. Please enter line N, L or 6.`);
   }
-  // checking valid stops
-  if (!MTA.allLines[startLine].includes(startStop) || !MTA.allLines[endLine].includes(endStop)) {
-    return console.log(`Invalid stop. Please enter a valid stop on their corresponding line 'N', 'L' or '6'.`)
+  // checking valid end line
+  if(!Object.keys(MTA.allLines).includes(endLine)) {
+    return console.log(`Invalid destination line. Please enter line N, L or 6.`)
   }
-  // entering same starting/ending stops and lines
+  // checking valid start stop
+  if (!MTA.allLines[startLine].includes(startStop)) {
+    return console.log(`Invalid starting stop. Please enter a valid stop on their corresponding line N, L or 6.`)
+  }
+  // checking valid end stop
+  if (!MTA.allLines[endLine].includes(endStop)) {
+    return console.log(`Invalid destination stop. Please enter a valid stop on their corresponding line N, L or 6.`)
+  }
+  // if user enters same starting/ending stops and lines
   if (startLine === endLine && startStop === endStop) {
     return console.log(`No travel required to get to ${endStop} on line ${startLine}.`);
   }
@@ -142,7 +150,6 @@ const planTrip = function(startLine, startStop, endLine, endStop) {
     let totalStops = stopArray1.length + stopArray2.length;
     console.log(`${totalStops} stops in total.`)
   }
-
 };
 
 
