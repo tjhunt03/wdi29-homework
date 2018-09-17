@@ -173,7 +173,7 @@ const guessLetter = function (letter) {
 
     if (letterMatched){
       console.log(`Congratulations!`);
-      word = hiddenArray.join(``);
+      word = hiddenArray.join('');
       console.log(word);
     } else {
       failedLetters ++;

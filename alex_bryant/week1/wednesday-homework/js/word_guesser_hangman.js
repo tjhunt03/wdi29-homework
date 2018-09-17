@@ -3,6 +3,7 @@ console.log("The Word Guesser");
 // You'll create a simple word guessing game where the user gets infinite tries to guess the word (like Hangman without the hangman, or like Wheel of Fortune without the wheel and fortune).
 
 // Create two global arrays: one to hold the letters of the word (e.g. 'F', 'O', 'X'), and one to hold the current guessed letters (e.g. it would start with '_', '_', '_' and end with 'F', 'O', 'X').
+//Can also write the string and use .split('') to create an array from it
 let lettersOfWord = ['P','O','P','T','A','R','T'];
 let curGuessedLets = [];
 //Add blanks to the guessed letters arr
