@@ -1,0 +1,64 @@
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+#main-div {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-weight: 300;
+  color: #000000;
+  line-height: 17px;
+  font-size: 30px;
+  font-family: "Serif MS", serif;
+}
+
+.small-text, .small-link {
+  font-size: 14px;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+.topnav a {
+    /* float: left; */
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    color: #4477CC;
+}
+
+.social_media {
+  float: right;
+  margin: 0 0 1em 1em;
+}
+
+.border-text {
+  border: 1px inset #AAAAAA;
+  padding: 8px 8px;
+}
+
+.button_blurb {
+  float: right;
+  margin: 0 auto;
+}
