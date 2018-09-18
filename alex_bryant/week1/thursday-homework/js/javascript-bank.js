@@ -47,6 +47,8 @@ const createAccount = function (name, balance) {
 }
 
 const amendBalance = function (name, amt) {
+  //Can also use the name as a key to find the user
+  //E.g. bank.accounts["Bob"] or bank.accounts[owner]
   for (let i=0; i<bank.accounts.length; i+=1) {
     if (name === bank.accounts[i].owner) {
       //edit account and return amended balance amount
