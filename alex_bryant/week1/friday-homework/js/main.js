@@ -39,15 +39,15 @@ const railway = {
   //Object to hold the 3 lines on the railway
   lines: {},
 
-  //// Factories and Methods to actually create the railway ////
+  //// Constructors and Methods to actually create the railway ////
 
-  // Factory to create a stop
+  // Constructor to create a stop
   Stop: function (name, num) {
     //Shorthand way to create an object, e.g. name: name, is same as > name
     return {name, num};
   },
 
-  // Factory to create a Line
+  // Constructor to create a Line
   Line: function (name, stops) {
     //Shorthand way to create an object, e.g. name: name, is same as > name
     return {name, stops};
