@@ -16,15 +16,22 @@ const rectangle = {
   length: 4,
   width: 4,
   isSquare: function() {
-    return (this.length === this.width);
-  }
+    return this.length === this.width;
+  },
+   area: function (){
+    return this.length*this.width;
+  },
+   perimeter: function() {
+     return (this.length + this.width)*2
+   }
 };
-console.log(rectangle);
-console.log(rectangle.isSquare());
-
-
-
-
+// console.log(rectangle);
+// console.log(rectangle.isSquare());
+// console.log(rectangle.area());
+// console.log(rectangle.perimeter());
+console.log (`Rectabgle is a square? ${rectangle.isSquare()}`);
+console.log(`Wtat is the area of the rectangle? ${rectangle.area()}`);
+console.log(`What is the perimeter of the rectangel? ${rectangle.perimeter()}`);
 
 
 
@@ -46,6 +53,34 @@ console.log(rectangle.isSquare());
 // };
 // As above, these functions should take a single object as an argument, which will have the same keys as the triangle above, and which you will use for your calcuations.
 //
+
+const triangle = {
+  sideA: 4,
+  sideB: 4,
+  sideC: 4,
+  isEquilateral: function(){
+    return this.sideA === this.sideB === this.sideC;
+  },
+  isIsosceles: function(){
+   return(this.sideA===this.sideB || this.sideB === this.sideC || this.sideC ===this.sideA);
+  },
+ // area:function(){
+ //   return()
+
+};
+
+// console.log(triangle);
+// console.log(triangle.isEquilateral());
+console.log(`Triangle is equilateral? ${triangle.isEquilateral()}`);
+console.log(`Triangle is isIsosceles? ${triangle.isIsosceles()}`);
+
+
+
+ //(A===B)&&(B===C)
+
+
+
+
 //  js-homework-5.md
 // The Cash Register
 // Write a function called cashRegister that takes a shopping cart object. The object contains item names and prices (itemName: itemPrice). The function should return the total price of the shopping cart. Example
