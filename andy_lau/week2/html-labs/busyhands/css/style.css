@@ -1,0 +1,112 @@
+body {
+  margin: 0 auto;
+  background:url("../images/bg_wrapper.png") repeat-x, url("../images/bg_body.jpg") bottom repeat;
+  background-size: 5.5px, 50px;
+}
+
+nav {
+  background-color: #000000;
+  color: #FFFFFF;
+  height: 90px;
+  display: block;
+}
+
+#navBar {
+  margin: 0;
+  padding: 25px;
+}
+
+.navList {
+  display: inline-block;
+  padding-top: 19px;
+  margin: 0px;
+}
+
+li {
+  margin: 0px;
+  padding: 0px;
+  height: 90px;
+}
+
+li:hover {
+  background-image: url("../images/bg_nav_rollover.png");
+  background-repeat: repeat-x;
+  margin: 0px;
+}
+
+#container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+#banner {
+  text-align: center;
+  display: block;
+}
+
+#bannerImage {
+  height: 100%;
+  width: 100%;
+}
+
+#logoBusy {
+  text-align: left;
+  width: 100%;
+  margin: 20px 0 14px 0;
+}
+
+#bgBlurb {
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/bg_blurb.jpg");
+  background-repeat: repeat;
+}
+
+#bg {
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/bg_body.jpg");
+  background-repeat: repeat;
+}
+
+#shadow {
+  margin: -3.93px;
+}
+
+#inlineBlurb {
+  padding-left: 20px;
+  border-width: 0.1em;
+  border-style: inset;
+}
+
+#buttonBlurb {
+  float:right;
+  margin: 17px 14px;
+}
+
+#allBoxes {
+  min-width: 900px;
+}
+
+.homeBox {
+  float: left;
+  width: 32%;
+}
+
+.homePictures {
+  border: 5px solid rgb(80, 80, 80,  0.2);
+}
+
+footer {
+  margin-top: 350px;
+  position: absolute;
+  clear: left;
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.footerColumn {
+  float: left;
+  margin: 0 70px;
+  width: 20%;
+}

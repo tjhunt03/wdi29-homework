@@ -1,0 +1,74 @@
+body {
+  background-image: url('../images/bg_wrapper.png');
+  background-repeat: repeat-x;
+}
+
+header{
+  margin-top: 0px;
+}
+
+ul{
+  margin-top: 0px;
+  color: white;
+  width: 100%;
+}
+ul li{
+  height: 70px;
+  display: inline-block;
+  margin: 20px 20px 30px 20px;
+}
+ul li:hover{
+  background-image: url('../images/bg_nav_rollover.png')
+}
+
+.idek{
+  position: relative;
+  width: 950px;
+}
+
+.social-media{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.photobanner{
+  margin-bottom: -5px;
+}
+.shadow{
+  margin-top: 0px;
+}
+
+#wrapper{
+  margin: 0 auto;
+  background-color: blue;
+  background-image: url('../images/bg_wrapper.png');
+}
+
+#insta {
+  width: 62px;
+  height: 62px;
+  background: url('../images/socialNav.png') 0px 64px;
+}
+
+#insta:hover{
+  background: url('../images/socialNav.png') 0px 0px;
+}
+
+
+
+#tumblr {
+  width: 62px;
+  height: 62px;
+  background: url('../images/socialNav.png') 70px 64px;
+}
+#facebook {
+  width: 62px;
+  height: 62px;
+  background: url('../images/socialNav.png') 140px 64px;
+}
+#idk {
+  width: 62px;
+  height: 62px;
+  background: url('../images/socialNav.png') 0px 64px;
+}

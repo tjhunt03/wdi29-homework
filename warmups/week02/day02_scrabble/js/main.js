@@ -18,6 +18,16 @@
 // You can play a :double or a :triple word.
 
 
+
+// APPROACH
+//  - create a general object which holds scrabble logic
+//  - create an object containing letterScore (structure = LETTER : SCORE)
+//  - create score method:
+//      convert input word into upper/ lowerCase (to match the data)
+//  - LOOP: isolate each letter of the word
+//     For each letter, give us the value (i.e. if we get A, give us 1)
+//     Once we get the value, we want to add it to our running score
+
 const scrabble = {
   letterScore: {
     1: ["A", "E", "I", "O", "U", "L", "N", "R", "S", "T" ],

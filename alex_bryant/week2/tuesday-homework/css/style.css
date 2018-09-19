@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css?family=Mukta+Malar');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+
+/* Allows us to set percentage widths and heights that don't incorporate borders and margins into calculations. */
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: lavender;
+  padding: 0;
+  margin: 0;
+}
+
+div {
+  display: block;
+}
+
+.navigation {
+    background: #98b880;
+}
+
+.row {
+    max-width: 1260px;
+    min-width: 755px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.nav {
+    padding: 10px 0 3px 20px;
+    /* height: 24px; */
+    width: 100%;
+    float: left;
+}
+
+nav ul li {
+  display: inline-block;
+  padding-right: 30px;
+}
+
+ul li a {
+  font-family: 'Mukta Malar', sans-serif;
+  font-size: 30px;
+}
+
+.nav-head {
+  display: inline;
+  position: relative;
+  float: right;
+  font-family: 'Mukta Malar', sans-serif;
+  font-size: 40px;
+}
+
+.main-div {
+  max-width: 1000px;
+  margin: 50px auto;
+}
+
+#quote1, #quote2, #quote3, #quote4 {
+  padding: 25px;
+  font-size: 30px;
+}
+
+#quote1:hover, #quote2:hover, #quote3:hover, #quote4:hover {
+  font-style: : strong;
+  font-size: 32px;
+  border: 1px solid #000;
+}
+
+#quote1 {
+  font-family: 'Playfair Display', serif;
+}
+
+#quote2 {
+  font-family: 'Titillium Web', sans-serif;
+}
+
+#quote3 {
+  font-family: 'Nunito', sans-serif;
+}
+
+#quote4 {
+  font-family: 'Fjalla One', sans-serif;
+}
+
+img {
+  max-width: 300px;
+  float: right;
+}
+
+.main-div p {
+  display: inline;
+  top: 0;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 19px;
+}
+
+.main-div p:hover {
+  color: darkblue;
+}
+
+.art {
+  margin: 20px;
+  padding: 20px;
+}
+
+.main-div ul li {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 32px;
+  margin-bottom: 16px;
+  margin-right: 10px;
+}
