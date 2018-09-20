@@ -1,0 +1,55 @@
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Merriweather', serif;
+}
+
+nav{
+  border: 1px solid black;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20%;
+  height: 100%;
+}
+
+nav img{
+  display: block;
+  width: 100%;
+  min-width: 150px;
+  height: auto;
+  top: 0;
+  left: 0;
+}
+
+p {
+  text-align: left;
+}
+
+span{
+  text-decoration: underline;
+}
+
+ul{
+  padding-left: 20px;
+  list-style: none;
+}
+
+main{
+  display: inline-block;
+  width: 80%;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  right: 0;
+}
+
+p img{
+  float: right;
+}
+
+#second img{
+  float: left;
+}
