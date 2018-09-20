@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900i|Roboto+Slab:100,400,700');
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 22px;
+  color: #2B303A;
+  margin: 0;
+  background-color: #EEE5E9;
+}
+
+.sideBar {
+  width: 350px;
+  height: 100%;
+  background-color: #031634;
+  border-right: solid 20px #92DCE5;
+  display: inline-block;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+h1 {
+  margin: 0;
+  padding: 25px;
+  font-family: 'Merriweather', serif;
+  font-size: 50px;
+  font-style: italic;
+  font-weight: 900;
+  line-height: 70px;
+  color: #EEE5E9;
+}
+
+.orange {
+  color: #F15618;
+}
+
+nav {
+  position: fixed;
+  bottom: 10px;
+  padding: 25px;
+}
+
+nav a {
+  display: block;
+  font-size: 18px;
+  font-family: 'helvetica', serif;
+  font-weight: 300;
+  text-decoration: none;
+  color: #fff;
+  padding: 13px 0;
+  border-bottom: solid 1px #fff;
+}
+
+nav a:hover {
+  color: #92DCE5;
+}
+
+.blue {
+  color: #92DCE5;
+}
+
+main {
+  position: relative;
+  left: 350px;
+  margin: 0 50px;
+  max-width: 60%;
+}
+
+h2 {
+  font-family: 'Merriweather', serif;
+  font-size: 35px;
+  line-height: 50px;
+  font-weight: 900;
+  font-style: italic;
+  color: #F15618;
+  margin: 25px 0 10px;
+}
+
+h3 {
+  color: #031634;
+  font-family: 'Merriweather', serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.heroImg {
+  max-width: 600px;
+  margin: 20px auto;
+  border: solid 5px #fff;
+  display: block;
+}
+
+.bioBox {
+  width: 49%;
+  display: inline-block;
+  padding-right: 30px;
+  margin-bottom: 100px;
+}
+
+p {
+  margin: 0;
+}
+
+h4 {
+  color: #031634;
+  font-family: helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  margin: 0 0 10px;
+  border-bottom: solid 1px #031634;
+  padding-bottom: 5px;
+}
+
+.map {
+  margin: 25px 0;
+  border: 3px solid #fff;
+}
+
+.questionBox {
+  border: solid 2px #FFF;
+  border-radius: 25px;
+  padding: 28px;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.questionTitle {
+  font-weight: 600;
+  color: #F15618;
+}
+
+.question {
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.triviaImg {
+  max-width: 150px;
+  float: right;
+}
+
+.button {
+    display: inline-block;
+    position: relative;
+    margin-top: 1em;
+    padding: 0.67em;
+    border: 1px solid #031634;
+    overflow: hidden;
+    text-decoration: none;
+    font-size: 1.3em;
+    outline: none;
+    color: #031634;
+    background: #fff;
+    font-family: helvetica, sans-serif;
+}
+
+/* CODE COURTESY OF JINTOS ON CODEPEN */
+
+.button span {
+    -webkit-transition: 0.6s;
+    -moz-transition: 0.6s;
+    -o-transition: 0.6s;
+    transition: 0.6s;
+    -webkit-transition-delay: 0.2s;
+    -moz-transition-delay: 0.2s;
+    -o-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+}
+
+.button:before,
+.button:after {
+    content: '';
+    position: absolute;
+    top: 0.67em;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    -webkit-transition: .4s,opacity .6s;
+    -moz-transition: .4s,opacity .6s;
+    -o-transition: .4s,opacity .6s;
+    transition: .4s,opacity .6s;
+}
+
+/* :before */
+
+.button:before {
+    content: attr(data-hover);
+    -webkit-transform: translate(-150%,0);
+    -moz-transform: translate(-150%,0);
+    -ms-transform: translate(-150%,0);
+    -o-transform: translate(-150%,0);
+    transform: translate(-150%,0);
+}
+
+/* :after */
+
+.button:after {
+    content: attr(data-active);
+    -webkit-transform: translate(150%,0);
+    -moz-transform: translate(150%,0);
+    -ms-transform: translate(150%,0);
+    -o-transform: translate(150%,0);
+    transform: translate(150%,0);
+}
+
+/* Span on :hover and :active */
+
+.button:hover span,
+.button:active span {
+    opacity: 0;
+    -webkit-transform: scale(0.3);
+    -moz-transform: scale(0.3);
+    -ms-transform: scale(0.3);
+    -o-transform: scale(0.3);
+    transform: scale(0.3);
+}
+
+/*  We show :before pseudo-element on :hover
+    and :after pseudo-element on :active */
+
+.button:hover:before,
+.button:active:after {
+    opacity: 1;
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+    -webkit-transition-delay: .4s;
+    -moz-transition-delay: .4s;
+    -o-transition-delay: .4s;
+    transition-delay: .4s;
+}
+
+/*  We hide :before pseudo-element on :active */
+
+.button:active:before {
+    -webkit-transform: translate(-150%,0);
+    -moz-transform: translate(-150%,0);
+    -ms-transform: translate(-150%,0);
+    -o-transform: translate(-150%,0);
+    transform: translate(-150%,0);
+    -webkit-transition-delay: 0s;
+    -moz-transition-delay: 0s;
+    -o-transition-delay: 0s;
+    transition-delay: 0s;
+}
