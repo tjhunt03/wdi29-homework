@@ -70,8 +70,8 @@ const catWalk = function(){
   speedUpLeftCatFunc();
 
   //Get how far left it has moved, so we can check if time to switch
-  leftSide = Number(catImage.style.left.replace("px", ""));
-  let screenWidth = document.querySelector('body').clientWidth;
+  leftSide = Number(catImage.style.left.replace("px", "")); //NOTE:parseint
+  let screenWidth = document.querySelector('body').clientWidth; //NOTE: window.innerWidth
 
   // Check if reached end of screen and turn around
   if (leftSide > screenWidth +20) {
@@ -110,8 +110,8 @@ monkeyButton = document.createElement('button');
 monkeyButton.setAttribute('type', 'button');
 monkeyButton.className = 'addMonkeyButton';
 monkeyButton.style = "height: 75px; display: block; margin:0 auto; border-radius:65%; font-size: 24px;\
-background:red; border: solid 2px black; font-weight: 700; zIndex:2;"
-monkeyButton.textContent = "Press this button for monkeys!!";
+background:red; border: solid 2px black; font-weight: 700; z-index:2;"
+monkeyButton.textContent = "Press for monkeys";
 document.querySelector('.monkeyButtonDiv').appendChild(monkeyButton);
 
 //Create the static image
@@ -150,13 +150,12 @@ const addMonkey = function(){
     }
     const screenWidth = document.querySelector('body').clientWidth;
     const monkeyImgPosition = [getRandomNumber(20,screenWidth), getRandomNumber(30,650)]
-    console.log(monkeyImgPosition);
     newMonkeyImage.style = `position:absolute; height: 150px; width: 150px; left: ${monkeyImgPosition[0]}px; top: ${monkeyImgPosition[1]}px`;
     document.body.appendChild(newMonkeyImage);
 
   }
 
-  setTimeout(changeBackFromGif, 1800);
+  setTimeout(changeBackFromGif, 1800); //Put the changeBackFromGif as anonymous inside Timeout here
 }
 
 monkeyButton.addEventListener('click', addMonkey);
