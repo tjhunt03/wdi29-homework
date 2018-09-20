@@ -51,7 +51,7 @@ const planTrip = function(line1, start, line2, end){
     validLine.push(value);   //array of lines
   };
   if (validLine.indexOf(line1)===-1){
-    return `Invalid staring line`;
+    return `Invalid starting line`;
   };
   if (validLine.indexOf(line2)===-1){
     return `Invalid ending line`;
