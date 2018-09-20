@@ -50,6 +50,13 @@ ul li:hover{
   height: 62px;
   background: url('../images/socialNav.png') 0px 64px;
 }
+
+#insta:hover{
+  background: url('../images/socialNav.png') 0px 0px;
+}
+
+
+
 #tumblr {
   width: 62px;
   height: 62px;
@@ -58,7 +65,7 @@ ul li:hover{
 #facebook {
   width: 62px;
   height: 62px;
-  background: url('../images/socialNav.png') 0px 64px;
+  background: url('../images/socialNav.png') 140px 64px;
 }
 #idk {
   width: 62px;
