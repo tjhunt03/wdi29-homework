@@ -28,10 +28,7 @@ const viewOfAccounts = {
       this.changeCompColor($balance, false);
     }
   },
-  setInputFieldColor: function (account, color) {
-    const $amount = $(`#${account}Amount`);
-    $amount.css("backgroundColor", color);
-  },
+  //Method to change a component's background color
   changeCompColor: function (component, valid) {
     if (valid) {
       component.css("backgroundColor", "#FFFFFF");
@@ -45,6 +42,7 @@ const viewOfAccounts = {
 $().ready(function() {
   // Button listeners
   $('input[type="button"]').click(function() {
+    //Get the correct button based on the name
     const buttonClicked = this.id;
     let deposit = true;
     let account = "savings";
@@ -56,12 +54,15 @@ $().ready(function() {
     }
     const $relatedTextField = $(`#${account}Amount`);
     //console.log($relatedTextField);
+    //Check if the text field contains a valid amount to process
     const valid = controller.checkValidity($relatedTextField.val());
     if (valid) {
       const balanceAndAmount = viewOfAccounts.getBalanceAndAmount(account);
       //console.log({deposit: deposit, account: account, balance: balanceAndAmount.balance, amount: balanceAndAmount.amount});
+      // Send an object back top the bank object to process the logic
       controller.processTransaction({deposit: deposit, account: account, balance: balanceAndAmount.balance, amount: balanceAndAmount.amount});
     }
+    //Set the colors of the textfields when button is clicked
     viewOfAccounts.changeCompColor($relatedTextField, valid);
   });
 
