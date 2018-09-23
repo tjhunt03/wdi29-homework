@@ -19,7 +19,7 @@ const viewOfAccounts = {
   //Update the balance displayed on screen
   updateScreenBalance: function (account, amount) {
     const $amount = $(`#${account}Amount`);
-    $amount.val("");
+    //$amount.val("");
     const $balance = viewOfAccounts.getRightAccount(account);
     $balance.html(`$${amount}`);
     if (amount > 0) {
