@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #ccc;
+  font-family: 'Oswald', sans-serif;
+}
+
+.nav ul {
+  list-style: none;
+  background-color: #444;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.nav li {
+
+  font-size: 1.2em;
+  line-height: 40px;
+  height: 40px;
+  border-bottom: 1px solid #888;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: .3s background-color;
+}
+
+.nav a:hover {
+  background-color: #005f5f;
+}
+
+@media screen and (min-width: 600px) {
+  .nav li {
+    width: 120px;
+    border-bottom: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.4em;
+  }
+
+  .nav li {
+    display: inline-block;
+    margin-right: -4px;
+  }
+
+  .name {
+    background-color: pink;
+    color: black;
+    /* margin: 0 auto; */
+    padding: 0;
+    text-align: center;
+    display: inline-block;
+    float: left;
+    /* margin-left: 150px */
+    /* height: 50px;*/
+    width: 500px;
+    height: 1900px;
+    position: relative;
+  }
+
+  .biography {
+    text-align: center;
+    /* border: 2px solid white */
+  }
+  .hometown {
+    text-align: center;
+  }
+
+  .trivia {
+    text-align: center;
+
+  }
+
+
+  .side {
+    background-color: pink;
+    /* border: 2px solid red; */
+    width: 540px;
+    height: 1900px;
+    float: left;
+    display: inline-block;
+  }
+
+  .photo {
+
+    background-color: lavender;
+    float:left;
+    border: 2px solid white
+    display:inline-block;
+    width: 400px;
+    height: 1900px;
+    /* position: sticky; */
+  }
+.mapouter {
+
+  margin-top: 150px;
+  margin-left: 435px;
+}
