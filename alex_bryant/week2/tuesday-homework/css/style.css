@@ -12,6 +12,7 @@
 }
 
 body {
+  /* background: url(../images/shannon-nav.png) no-repeat center fixed; */
   background-color: lavender;
   padding: 0;
   margin: 0;
@@ -115,4 +116,12 @@ img {
   font-size: 32px;
   margin-bottom: 16px;
   margin-right: 10px;
+}
+
+.bullets {
+  padding-left: 10px;
+}
+
+.face-image {
+  padding: 10px;
 }
