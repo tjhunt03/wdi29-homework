@@ -20,20 +20,13 @@ puts
 
 def check_operation x, num1, num2
   case x
-    when "+"
-      return num1 + num2
-    when "-"
-      return num1 - num2
-    when "*"
-      return num1 * num2
-    when "/"
-      return num1 / num2
-    when "exp"
-      return num1 ** num2
-    when "sqrt"
-      return Math.sqrt num1
-    else
-      return "Invalid operation choosen"
+  when "+" then num1 + num2
+  when "-" then num1 - num2
+  when "*" then num1 * num2
+  when "/" then num1 / num2
+  when "exp" then num1 ** num2
+  when "sqrt" then Math.sqrt num1
+  else "Invalid operation choosen"
   end
 end
 
