@@ -48,12 +48,10 @@ end
 
 #check the order and reverse if going backwards
 def check_order_of_stops idx1, idx2, stops
-  #puts "#{idx1}, #{idx2}, #{stops}"
   if idx2 > idx1
     return stops
-  else
-    return stops.reverse
   end
+  stops.reverse
 end
 
 #perform a single line journey
@@ -125,24 +123,24 @@ def check_journey_validity line1, line2, start_station, end_station
 end
 
 puts "Tests..."
-puts "______"
+puts "--------"
 puts "Valid journey on single line"
 puts "....."
 check_journey_validity :n, :n, "Times Square", "23rd"
-puts "______"
+puts "--------"
 puts "Valid journey on 2 lines"
 puts "....."
 check_journey_validity :'6', :l, "33rd", "8th"
-puts "______"
+puts "--------"
 puts "Invalid journey with station not existing on specified line"
 puts "....."
 check_journey_validity :'6', :l, "33rd", "77th"
-puts "______"
+puts "--------"
 puts "Invalid journey with line not existing at all"
 puts "....."
 check_journey_validity :p, :l, "33rd", "77th"
-puts "______"
+puts "--------"
 puts "Correction where intersection is quoted on different lines"
 puts "....."
 check_journey_validity :'6', :l, "33rd", "Union Square"
-puts "______"
+puts "--------"
