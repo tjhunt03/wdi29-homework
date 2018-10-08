@@ -90,7 +90,8 @@ li a:hover, p a:hover {
   width: 95%;
   margin: 10px auto 0;
   display: grid;
-  grid-template-columns: 35% 25% 40%;
+  grid-template-columns: 35% 65%;
+  grid-column-gap: 20px;
 }
 
 .grid_item {
@@ -105,11 +106,9 @@ li a:hover, p a:hover {
   padding-bottom: 20px;
 }
 
-/* .colour_bg {
-  background-color: rgb(254, 194, 8);
-  padding: 3px 5px 3px 0;
-  letter-spacing: 1px;
-} */
+h2.customer_complaint_list {
+  margin-top: 40px;
+}
 
 .complaint {
   width: 80%;

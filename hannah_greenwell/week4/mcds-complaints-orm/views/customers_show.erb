@@ -12,10 +12,8 @@
 
     <a class="update" href="/customers/<%= @customer.id %>/edit">Edit <%= @customer.name %></a>
     <a class="update" href="/customers/<%= @customer.id %>/delete">Delete <%= @customer.name %></a>
-  </div>
 
-  <div class="grid_item">
-    <h2><span class="colour_bg">Complaints</span></h2>
+    <h2 class="customer_complaint_list"><span class="colour_bg">Complaints</span></h2>
     <ul>
       <% @customer.complaints.each do |complaint| %>
       <li>
