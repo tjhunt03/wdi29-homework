@@ -35,11 +35,13 @@ end_line = ("line_" + gets.chomp).downcase.to_sym
 print "What is your destination stop?: "
 end_stop = gets.chomp.to_s
 
-mta = {
-  line_n: ["Times Square", "34th", "28th", "23rd", "Union Square", "8th"],
-  line_l: ["8th", "6th", "Union Square", "3rd", "1st"],
-  line_6: ["Grand Central", "33rd", "28th", "23rd", "Union Square", "Astor Place"],
-}
+def mta
+  {
+    line_n: ["Times Square", "34th", "28th", "23rd", "Union Square", "8th"],
+    line_l: ["8th", "6th", "Union Square", "3rd", "1st"],
+    line_6: ["Grand Central", "33rd", "28th", "23rd", "Union Square", "Astor Place"],
+  }
+end
 
 
 def single_trip(mta, line, start_stop, end_stop)
