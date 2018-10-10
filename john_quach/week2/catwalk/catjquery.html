@@ -1,0 +1,25 @@
+const $cat = $('img.cat');
+$cat.css('left', '0px');
+
+const rightEdge = window.innerWidth - $cat.width();
+let catStepAmount = 5;
+const catWalk = function() {
+
+  let leftPos = parseInt( $cat.css('left'));
+
+  leftPos += catStepAmount;  //by default. add 5 to leftPos
+
+  $cat.css('left', `${leftPos}px`);
+
+// Is cat current position greater than screen.
+
+if ( leftPos >  rightEdge)  || (leftPos ,){
+
+  catStepAmount *= -1;
+  $cat.css('transform', 'scaleX(${Math.sign(catStepAmount)})');
+
+
+
+};
+
+setInterval(catWalk,30);
