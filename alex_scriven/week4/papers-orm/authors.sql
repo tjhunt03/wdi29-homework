@@ -12,7 +12,7 @@ INSERT INTO authors (
   name, age, country, profile_pic, alive, website
 )
 VALUES(
-  "Leo Breiman", 77, "USA", "https://en.wikipedia.org/wiki/Leo_Breiman#/media/File:Leo_Breiman.jpg", 0, "https://en.wikipedia.org/wiki/Leo_Breiman"
+  "Leo Breiman", 77, "USA", "https://upload.wikimedia.org/wikipedia/en/4/4d/Leo_Breiman.jpg", 0, "https://en.wikipedia.org/wiki/Leo_Breiman"
 );
 
 INSERT INTO authors (

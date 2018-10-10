@@ -110,8 +110,6 @@ end
 #READ : show
 get "/papers/:id" do
   @paper = Paper.find params[:id]
-  @paperAuthor = Author.find(@paper.author_id)
-  puts @paperAuthor
   erb :papers_show
 end
 
