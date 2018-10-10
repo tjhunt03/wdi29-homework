@@ -10,10 +10,11 @@ Tuple.prototype.add = function (xOffset, yOffset) {
   this.x += xOffset;
   this.y += yOffset;
 };
-Tuple.prototype.getDistance = function (coOrds) {
+Tuple.prototype.distanceTo = function (coOrds) {
   const a = coOrds.x - this.x;
   const b = coOrds.y - this.y;
-  const c = Math.sqrt(a**2 + b**2);
+  const difference = new Tuple(a,b);
+  const c = difference.getLength();
   return c;
 }
 Tuple.prototype.getLength = function (){
@@ -43,33 +44,29 @@ const Cat = function(x,y){
   this.updateImage();
 }
 Cat.prototype.moveTowards = function(tuple, currentPos){
-  const distanceToMouse = currentPos.getVector(tuple);
-  console.log(distanceToMouse.getLength());
-  const movement = new Tuple(distanceToMouse.x/100, distanceToMouse.y/100);
+  const vectorToMouse = currentPos.getVector(tuple);
+  console.log(vectorToMouse);
+  const movement = new Tuple(vectorToMouse.x/100, vectorToMouse.y/100);
   this.catPos.add(movement.x, movement.y);
   this.updateImage();
 }
 Cat.prototype.updateImage = function(){
-  const position = new Tuple( Math.round(this.catPos.x) , Math.round(this.catPos.y) );
+  const position = new Tuple(Math.round(this.catPos.x) , Math.round(this.catPos.y));
   this.img.css({
-    top: `${position.y - this.imgOffset.y}px`,
+    top: `${positio.y - this.imgOffset.y}px`,
     left: `${position.x - this.imgOffset.x}px`,
   })
 }
 Cat.prototype.act = function(tuple){
   const currentPos = new Tuple(this.catPos.x, this.catPos.y);
-  const distance = currentPos.getDistance(tuple);
+  const distance = currentPos.distanceTo(tuple);
   if (distance > 50){
     this.moveTowards(tuple, currentPos);
   }
 }
-Cat.prototype.step = function(distance){
-  //min 2, max 5 steps per second.
-  const stepsPerSecond = -(distance/150) + 16/3;
-  const framesForStep = 1000/5 * stepsPerSecond;
-  const footDown = 10;
-
-  //Step cycle: x% foot down, 100-x% in air.
+Cat.prototype.step = function(){
+  //min 2, max 5 per second.
+  this.stepping =
 }
 Cat.prototype.explode = function(){
   //create rainbow-splat.
@@ -88,11 +85,10 @@ onmousemove = function(e){
   mousePos.setXY(e.clientX, e.clientY);
 }
 
-let run;
 $(document).ready(function(){
   test = new Cat(250,250);
   $('body').append(test.img);
-  run = setInterval(mainLoop, 5);
+  let run = setInterval(mainLoop, 5);
 })
 
 
