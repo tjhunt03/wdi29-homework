@@ -1,0 +1,13 @@
+
+<h2>
+
+<p>Information about <%=@teachers.name %></p>
+
+
+<h3>Name: </h3><h3><%=@teachers.name%></h3> <br><br>
+<h3>Nationality: </h3><h3><%=@teachers.nationality%></h3> <br><br>
+<h3>Date of Birth: </h3><h3><%=@teachers.dob%></h3>
+
+</h2><br><br>
+
+<%= link_to 'Edit this Teacher', edit_teacher_path(@teachers) %> | <%= link_to 'Delete this Teacher', teacher_path(@teachers), method: 'delete' %>

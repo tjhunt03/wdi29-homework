@@ -1,0 +1,23 @@
+<%= form_for @teacher do |f| %>
+
+<field>
+  <!-- gives us a <labe></label> tag  -->
+  <%= f.label :name %>
+  <!--  gives us <input type="text" -->
+  <%= f.text_field :name %>
+</field>
+
+  <field>
+  <%= f.label :nationality %>
+  <%= f.text_field :nationality %>
+  </field>
+
+  <field>
+  <%= f.label :dob, 'Date of Birth' %>
+  <%= f.text_field :dob %>
+  </field>
+
+
+<%= f.submit %>
+
+<% end %>
