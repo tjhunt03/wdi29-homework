@@ -18,7 +18,9 @@ html {
   }
 
 
-
+a {
+  text-decoration: none;
+}
 
 
 
@@ -92,6 +94,7 @@ html {
   padding-top: 0px;
   padding-bottom: 30px;
     opacity: 0.8;
+          overflow: auto;
 }
 
 .col_1 {
@@ -138,6 +141,37 @@ html {
   overflow: auto;
     opacity: 0.8;
 }
+
+.col2plus3Trivia {
+  width: 57%;
+  height: auto;
+  background-color: rgb(252, 229, 148);
+  display: inline-block;
+  margin: -1px;
+  padding: 5%;
+  position: relative;
+  overflow: auto;
+    opacity: 0.8;
+      overflow: auto;
+}
+
+.col1plus2Hometown {
+  width: 57%;
+  height: auto;
+  background-color: rgb(252, 229, 148);
+  display: inline-block;
+  margin: -1px;
+  padding: 5%;
+  position: relative;
+  overflow: auto;
+    opacity: 0.8;
+      overflow: auto;
+}
+
+
+
+
+
 #analytical {
   width: 100%;
   height: auto;
