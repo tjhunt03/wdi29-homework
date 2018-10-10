@@ -1,35 +1,10 @@
 class Roman
 
   def initialize
+    # we need to set up this instance variable in our initialize method...
+    # we can't just declare it in the class itself - it will not be set
+    # NOTE that Class variables DO behave this way, so that is an alternative
     @roman_map = {
-      1000 => "M",
-
-    }
-  end
-
-  def to_roman
-  end
-end
-
-
-
-test = Roman.new
-
-puts test.to_roman 1990
-
-
-
-
-
-
-
-
-
-
-class Roman
-
-  def initialize
-    @romans = {
       1000 => "M",
       900 => "CM",
       500 => "D",
@@ -49,22 +24,27 @@ class Roman
   def to_roman(number)
     result = ""
 
-    @romans.each do |key, value|
-      # puts "each: #{key} => #{value}, number:#{number}."
+    @roman_map.each do |key, value|
+      puts "========= each key: #{key}, value: #{value} =========="
 
-      while number >=key
+      # don't even enter the while loop if our number is smaller than the current key
+      while number >= key
         result += value
 
-        puts "While #{number} >= #{key}, we add #{value} to result. New result is #{result}."
-
+        puts "number: #{number} >= #{key}"
+        puts "result: #{result}"
         number -= key
-      end
+
+        puts "new number: #{number}"
+      end #while
+
     end #loop
 
     result
   end
+
 end
 
 test = Roman.new
-p test.to_roman(1990)
-p test.to_roman(2008)
+puts test.to_roman 1990
+puts test.to_roman 3456
