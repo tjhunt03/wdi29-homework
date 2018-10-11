@@ -2,7 +2,7 @@
   <thead>
     <tr>
       <th scope="col">Name</th>
-      <th scope="col">Description</th>
+      <th scope="col">Description (excerpt)</th>
     </tr>
   </thead>
   <tbody>
@@ -22,7 +22,7 @@
         <th scope="row">
           <%= link_to "#{lang.name}", language_path(lang.id) %>
         </th>
-        <td><%= lang.description %></td>
+        <td><%= lang.description[0, 300] + "..." %></td>
       </tr>
     <% end %>
   </tbody>
