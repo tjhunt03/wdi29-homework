@@ -2425,3 +2425,581 @@ Processing by StudentsController#show as HTML
 Completed 200 OK in 57ms (Views: 49.9ms | ActiveRecord: 0.2ms)
 
 
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20181011093553)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20181011093553_create_users.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "email" text, "password" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181011093553_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181011093553"]]
+  ↳ bin/rails:9
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mFuture Load (1.1ms)[0m  [1m[34mSELECT "futures".* FROM "futures"[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mFuture Destroy (1.7ms)[0m  [1m[31mDELETE FROM "futures" WHERE "futures"."id" = ?[0m  [["id", 8]]
+  ↳ db/seeds.rb:8
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mFuture Destroy (0.3ms)[0m  [1m[31mDELETE FROM "futures" WHERE "futures"."id" = ?[0m  [["id", 9]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mFuture Destroy (0.6ms)[0m  [1m[31mDELETE FROM "futures" WHERE "futures"."id" = ?[0m  [["id", 10]]
+  ↳ db/seeds.rb:8
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mFuture Destroy (0.5ms)[0m  [1m[31mDELETE FROM "futures" WHERE "futures"."id" = ?[0m  [["id", 11]]
+  ↳ db/seeds.rb:8
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mFuture Create (2.1ms)[0m  [1m[32mINSERT INTO "futures" ("name", "year", "location", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "WDI Serial Killers"], ["year", 2018], ["location", "Super-duper MAX"], ["image", "https://cdn.europosters.eu/image/750/stickers/skull-crossbones-i7800.jpg"], ["created_at", "2018-10-11 09:39:03.498138"], ["updated_at", "2018-10-11 09:39:03.498138"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mFuture Create (0.6ms)[0m  [1m[32mINSERT INTO "futures" ("name", "year", "location", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "WDI Underwater"], ["year", 2060], ["location", "Atlantis"], ["image", "https://i.ytimg.com/vi/YXPLOlUMtPQ/maxresdefault.jpg"], ["created_at", "2018-10-11 09:39:03.508256"], ["updated_at", "2018-10-11 09:39:03.508256"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mFuture Create (0.6ms)[0m  [1m[32mINSERT INTO "futures" ("name", "year", "location", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "WDI Dwarves"], ["year", 1970], ["location", "Far Far Away"], ["image", "https://filmschoolrejects.com/wp-content/uploads/2017/07/sevendwarvesthanksgiving1.jpg"], ["created_at", "2018-10-11 09:39:03.514921"], ["updated_at", "2018-10-11 09:39:03.514921"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mStudent Destroy (5.5ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = ?[0m  [["id", 1]]
+  ↳ db/seeds.rb:16
+  [1m[35m (10.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mStudent Destroy (2.0ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = ?[0m  [["id", 2]]
+  ↳ db/seeds.rb:16
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mStudent Destroy (0.5ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = ?[0m  [["id", 3]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mStudent Destroy (0.5ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = ?[0m  [["id", 4]]
+  ↳ db/seeds.rb:16
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mStudent Destroy (1.1ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = ?[0m  [["id", 5]]
+  ↳ db/seeds.rb:16
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mStudent Destroy (1.3ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = ?[0m  [["id", 6]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mFuture Load (0.3ms)[0m  [1m[34mSELECT  "futures".* FROM "futures" WHERE "futures"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mStudent Create (2.0ms)[0m  [1m[32mINSERT INTO "students" ("name", "location", "hobbies", "image", "created_at", "updated_at", "future_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jeffrey Dahmer"], ["location", "USA"], ["hobbies", "Dining with friends"], ["image", "https://static1.squarespace.com/static/553a8ddae4b0bd1c1a10972e/t/5a66876d9140b71728f634cd/1516668784982/dahmer.jpg"], ["created_at", "2018-10-11 09:39:03.749241"], ["updated_at", "2018-10-11 09:39:03.749241"], ["future_id", 12]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mFuture Load (0.3ms)[0m  [1m[34mSELECT  "futures".* FROM "futures" WHERE "futures"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mStudent Create (0.7ms)[0m  [1m[32mINSERT INTO "students" ("name", "location", "hobbies", "image", "created_at", "updated_at", "future_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Linna Liu"], ["location", "Behind you"], ["hobbies", "Stalking her next victim, updating the gitbook"], ["image", "https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX8107180.jpg"], ["created_at", "2018-10-11 09:39:03.761209"], ["updated_at", "2018-10-11 09:39:03.761209"], ["future_id", 12]]
+  ↳ db/seeds.rb:20
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[36mFuture Load (0.2ms)[0m  [1m[34mSELECT  "futures".* FROM "futures" WHERE "futures"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mStudent Create (0.5ms)[0m  [1m[32mINSERT INTO "students" ("name", "location", "hobbies", "image", "created_at", "updated_at", "future_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Aquaman"], ["location", "Under da sea"], ["hobbies", "Swimming around, dodging fishing nets"], ["image", "http://2.bp.blogspot.com/--lIiLIJQWu0/Tn_5ti-xHcI/AAAAAAAAANw/suevM6WxjXw/s640/aquaman.jpg"], ["created_at", "2018-10-11 09:39:03.770806"], ["updated_at", "2018-10-11 09:39:03.770806"], ["future_id", 13]]
+  ↳ db/seeds.rb:22
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mFuture Load (0.2ms)[0m  [1m[34mSELECT  "futures".* FROM "futures" WHERE "futures"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:24
+  [1m[36mStudent Create (0.5ms)[0m  [1m[32mINSERT INTO "students" ("name", "location", "hobbies", "image", "created_at", "updated_at", "future_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Spongebib Squorepants"], ["location", "Sweatshop"], ["hobbies", "Avoiding copyright"], ["image", "https://thoughtcatalog.files.wordpress.com/2013/08/spongerob-cubejeans.jpg?w=584"], ["created_at", "2018-10-11 09:39:03.778156"], ["updated_at", "2018-10-11 09:39:03.778156"], ["future_id", 13]]
+  ↳ db/seeds.rb:24
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mFuture Load (0.3ms)[0m  [1m[34mSELECT  "futures".* FROM "futures" WHERE "futures"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mStudent Create (0.6ms)[0m  [1m[32mINSERT INTO "students" ("name", "location", "hobbies", "image", "created_at", "updated_at", "future_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Surly"], ["location", "Duff Gardens"], ["hobbies", "Abusing kids"], ["image", "https://vignette.wikia.nocookie.net/simpsons/images/4/42/Surly_Duff.png/revision/latest?cb=20130601152108"], ["created_at", "2018-10-11 09:39:03.786573"], ["updated_at", "2018-10-11 09:39:03.786573"], ["future_id", 14]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:31
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Brad"], ["email", "brad@brad"], ["password", "chicken"], ["created_at", "2018-10-11 09:39:03.806889"], ["updated_at", "2018-10-11 09:39:03.806889"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:32
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Joe"], ["email", "joe@joe"], ["password", "chicken"], ["created_at", "2018-10-11 09:39:03.817351"], ["updated_at", "2018-10-11 09:39:03.817351"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jane"], ["email", "jane@jane"], ["password", "chicken"], ["created_at", "2018-10-11 09:39:03.830042"], ["updated_at", "2018-10-11 09:39:03.830042"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20181011093553)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (3.2ms)[0m  [1m[35mDROP TABLE "users"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (1.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20181011093553"]]
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20181011094416)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20181011094416_create_users.rb:3
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "email" text, "password_digest" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181011094416_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181011094416"]]
+  ↳ bin/rails:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mFuture Load (1.1ms)[0m  [1m[34mSELECT "futures".* FROM "futures"[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mFuture Destroy (0.6ms)[0m  [1m[31mDELETE FROM "futures" WHERE "futures"."id" = ?[0m  [["id", 12]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mFuture Destroy (0.4ms)[0m  [1m[31mDELETE FROM "futures" WHERE "futures"."id" = ?[0m  [["id", 13]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mFuture Destroy (0.5ms)[0m  [1m[31mDELETE FROM "futures" WHERE "futures"."id" = ?[0m  [["id", 14]]
+  ↳ db/seeds.rb:8
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mFuture Create (1.6ms)[0m  [1m[32mINSERT INTO "futures" ("name", "year", "location", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "WDI Serial Killers"], ["year", 2018], ["location", "Super-duper MAX"], ["image", "https://cdn.europosters.eu/image/750/stickers/skull-crossbones-i7800.jpg"], ["created_at", "2018-10-11 09:44:44.011763"], ["updated_at", "2018-10-11 09:44:44.011763"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mFuture Create (0.9ms)[0m  [1m[32mINSERT INTO "futures" ("name", "year", "location", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "WDI Underwater"], ["year", 2060], ["location", "Atlantis"], ["image", "https://i.ytimg.com/vi/YXPLOlUMtPQ/maxresdefault.jpg"], ["created_at", "2018-10-11 09:44:44.019346"], ["updated_at", "2018-10-11 09:44:44.019346"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mFuture Create (0.8ms)[0m  [1m[32mINSERT INTO "futures" ("name", "year", "location", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "WDI Dwarves"], ["year", 1970], ["location", "Far Far Away"], ["image", "https://filmschoolrejects.com/wp-content/uploads/2017/07/sevendwarvesthanksgiving1.jpg"], ["created_at", "2018-10-11 09:44:44.107911"], ["updated_at", "2018-10-11 09:44:44.107911"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mStudent Destroy (0.5ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = ?[0m  [["id", 7]]
+  ↳ db/seeds.rb:16
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mStudent Destroy (0.5ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = ?[0m  [["id", 8]]
+  ↳ db/seeds.rb:16
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mStudent Destroy (3.2ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = ?[0m  [["id", 9]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mStudent Destroy (0.6ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = ?[0m  [["id", 10]]
+  ↳ db/seeds.rb:16
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mStudent Destroy (0.8ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = ?[0m  [["id", 11]]
+  ↳ db/seeds.rb:16
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mFuture Load (0.3ms)[0m  [1m[34mSELECT  "futures".* FROM "futures" WHERE "futures"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mStudent Create (0.5ms)[0m  [1m[32mINSERT INTO "students" ("name", "location", "hobbies", "image", "created_at", "updated_at", "future_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jeffrey Dahmer"], ["location", "USA"], ["hobbies", "Dining with friends"], ["image", "https://static1.squarespace.com/static/553a8ddae4b0bd1c1a10972e/t/5a66876d9140b71728f634cd/1516668784982/dahmer.jpg"], ["created_at", "2018-10-11 09:44:44.238290"], ["updated_at", "2018-10-11 09:44:44.238290"], ["future_id", 15]]
+  ↳ db/seeds.rb:18
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mFuture Load (0.2ms)[0m  [1m[34mSELECT  "futures".* FROM "futures" WHERE "futures"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mStudent Create (0.5ms)[0m  [1m[32mINSERT INTO "students" ("name", "location", "hobbies", "image", "created_at", "updated_at", "future_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Linna Liu"], ["location", "Behind you"], ["hobbies", "Stalking her next victim, updating the gitbook"], ["image", "https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX8107180.jpg"], ["created_at", "2018-10-11 09:44:44.246928"], ["updated_at", "2018-10-11 09:44:44.246928"], ["future_id", 15]]
+  ↳ db/seeds.rb:20
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[36mFuture Load (0.2ms)[0m  [1m[34mSELECT  "futures".* FROM "futures" WHERE "futures"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mStudent Create (0.6ms)[0m  [1m[32mINSERT INTO "students" ("name", "location", "hobbies", "image", "created_at", "updated_at", "future_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Aquaman"], ["location", "Under da sea"], ["hobbies", "Swimming around, dodging fishing nets"], ["image", "http://2.bp.blogspot.com/--lIiLIJQWu0/Tn_5ti-xHcI/AAAAAAAAANw/suevM6WxjXw/s640/aquaman.jpg"], ["created_at", "2018-10-11 09:44:44.258089"], ["updated_at", "2018-10-11 09:44:44.258089"], ["future_id", 16]]
+  ↳ db/seeds.rb:22
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mFuture Load (0.3ms)[0m  [1m[34mSELECT  "futures".* FROM "futures" WHERE "futures"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:24
+  [1m[36mStudent Create (1.0ms)[0m  [1m[32mINSERT INTO "students" ("name", "location", "hobbies", "image", "created_at", "updated_at", "future_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Spongebib Squorepants"], ["location", "Sweatshop"], ["hobbies", "Avoiding copyright"], ["image", "https://thoughtcatalog.files.wordpress.com/2013/08/spongerob-cubejeans.jpg?w=584"], ["created_at", "2018-10-11 09:44:44.264198"], ["updated_at", "2018-10-11 09:44:44.264198"], ["future_id", 16]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mFuture Load (0.2ms)[0m  [1m[34mSELECT  "futures".* FROM "futures" WHERE "futures"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mStudent Create (0.5ms)[0m  [1m[32mINSERT INTO "students" ("name", "location", "hobbies", "image", "created_at", "updated_at", "future_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Surly"], ["location", "Duff Gardens"], ["hobbies", "Abusing kids"], ["image", "https://vignette.wikia.nocookie.net/simpsons/images/4/42/Surly_Duff.png/revision/latest?cb=20130601152108"], ["created_at", "2018-10-11 09:44:44.274066"], ["updated_at", "2018-10-11 09:44:44.274066"], ["future_id", 17]]
+  ↳ db/seeds.rb:26
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+Started GET "/futures" for 127.0.0.1 at 2018-10-11 21:13:29 +1100
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/daniththai/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by FuturesController#index as HTML
+  Rendering futures/index.html.erb within layouts/application
+  [1m[36mFuture Load (1.4ms)[0m  [1m[34mSELECT "futures".* FROM "futures"[0m
+  ↳ app/views/futures/index.html.erb:4
+  Rendered futures/index.html.erb within layouts/application (18.8ms)
+Completed 500 Internal Server Error in 1610ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_user_path' for #<#<Class:0x00007fc081919da0>:0x00007fc08010ec88>
+Did you mean?  new_future_path):
+    19: 
+    20:       <% else %>
+    21:         <%= link_to 'Login', login_path %>
+    22:         <%= link_to 'Sign up', new_user_path %>
+    23: 
+    24:       <% end %>
+    25: 
+  
+app/views/layouts/application.html.erb:22:in `_app_views_layouts_application_html_erb__1432381293599640823_70232413042560'
+Started GET "/rails/info/routes" for 127.0.0.1 at 2018-10-11 21:13:53 +1100
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/daniththai/.rvm/gems/ruby-2.5.1/gems/railties-5.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/daniththai/.rvm/gems/ruby-2.5.1/gems/actionpack-5.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [24 times] (7.8ms)
+  Rendered /Users/daniththai/.rvm/gems/ruby-2.5.1/gems/actionpack-5.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (11.6ms)
+  Rendered /Users/daniththai/.rvm/gems/ruby-2.5.1/gems/railties-5.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (33.1ms)
+Completed 200 OK in 75ms (Views: 58.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/futures" for 127.0.0.1 at 2018-10-11 21:16:41 +1100
+Processing by FuturesController#index as HTML
+  Rendering futures/index.html.erb within layouts/application
+  [1m[36mFuture Load (7.0ms)[0m  [1m[34mSELECT "futures".* FROM "futures"[0m
+  ↳ app/views/futures/index.html.erb:4
+  Rendered futures/index.html.erb within layouts/application (9.9ms)
+Completed 500 Internal Server Error in 873ms (ActiveRecord: 7.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_user_path' for #<#<Class:0x00007fc081919da0>:0x00007fc081d34070>
+Did you mean?  new_future_path):
+    19: 
+    20:       <% else %>
+    21:         <%= link_to 'Login', login_path %>
+    22:         <!-- <%= link_to 'Sign up', new_user_path %> -->
+    23: 
+    24:       <% end %>
+    25: 
+  
+app/views/layouts/application.html.erb:22:in `_app_views_layouts_application_html_erb__1432381293599640823_70232394186520'
+Started GET "/futures" for 127.0.0.1 at 2018-10-11 21:16:53 +1100
+Processing by FuturesController#index as HTML
+  Rendering futures/index.html.erb within layouts/application
+  [1m[36mFuture Load (0.3ms)[0m  [1m[34mSELECT "futures".* FROM "futures"[0m
+  ↳ app/views/futures/index.html.erb:4
+  Rendered futures/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 78ms (Views: 68.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-10-11 21:16:58 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 59ms (Views: 53.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-10-11 21:17:04 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 74ms (Views: 62.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/futures" for 127.0.0.1 at 2018-10-11 21:19:40 +1100
+Processing by FuturesController#index as HTML
+  Rendering futures/index.html.erb within layouts/application
+  [1m[36mFuture Load (1.2ms)[0m  [1m[34mSELECT "futures".* FROM "futures"[0m
+  ↳ app/views/futures/index.html.erb:4
+  Rendered futures/index.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 83ms (Views: 66.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-10-11 21:20:23 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 62ms (Views: 56.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-10-11 21:20:25 +1100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 76ms (Views: 57.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-10-11 21:20:27 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 48ms (Views: 40.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-10-11 21:20:52 +1100
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LUcfncNxOVIWfQ8XLh3G33wzSaHuoOcXDXWuR23dW94T9QmheBWkbzwcPb9XTtlewyorbIu5N92ykAH4IvTaLQ==", "email"=>"brad@brad", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "brad@brad"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:7
+Redirected to http://localhost:3000/login
+Completed 302 Found in 9ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-10-11 21:20:52 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 57ms (Views: 50.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-10-11 21:20:57 +1100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 67ms (Views: 56.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-10-11 21:21:28 +1100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zOnfmpl+4GtM4sXr3x16wW1QjweUbEWFUOUVPH34Bq3yW8mmIhp9VmaD90OmTmVA0kntyvF1lU/vALqDMtGHXg==", "user"=>{"name"=>"brad", "email"=>"brad@brad", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "brad@brad"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "brad"], ["email", "brad@brad"], ["password_digest", "$2a$10$ujFhYuJjip951joctxsb2evT4/NmCyu5s9QU4gszHDCl6h4PV1L/y"], ["created_at", "2018-10-11 10:21:28.500045"], ["updated_at", "2018-10-11 10:21:28.500045"]]
+  ↳ app/controllers/users_controller.rb:7
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:7
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 86ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-10-11 21:21:28 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 65ms (Views: 55.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2018-10-11 21:52:36 +1100
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (1.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:4
+  Rendered students/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 86ms (Views: 66.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/futures" for 127.0.0.1 at 2018-10-11 21:52:40 +1100
+Processing by FuturesController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendering futures/index.html.erb within layouts/application
+  [1m[36mFuture Load (1.9ms)[0m  [1m[34mSELECT "futures".* FROM "futures"[0m
+  ↳ app/views/futures/index.html.erb:4
+  Rendered futures/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 55ms (Views: 40.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/futures/15" for 127.0.0.1 at 2018-10-11 21:52:42 +1100
+Processing by FuturesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mFuture Load (0.3ms)[0m  [1m[34mSELECT  "futures".* FROM "futures" WHERE "futures"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/futures_controller.rb:19
+  Rendering futures/show.html.erb within layouts/application
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."future_id" = ?[0m  [["future_id", 15]]
+  ↳ app/views/futures/show.html.erb:16
+  Rendered futures/show.html.erb within layouts/application (24.7ms)
+Completed 200 OK in 86ms (Views: 73.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/students/13" for 127.0.0.1 at 2018-10-11 21:52:48 +1100
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:19
+  Rendering students/show.html.erb within layouts/application
+  Rendered students/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 78ms (Views: 62.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/futures" for 127.0.0.1 at 2018-10-11 21:53:04 +1100
+Processing by FuturesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendering futures/index.html.erb within layouts/application
+  [1m[36mFuture Load (0.2ms)[0m  [1m[34mSELECT "futures".* FROM "futures"[0m
+  ↳ app/views/futures/index.html.erb:4
+  Rendered futures/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 66ms (Views: 54.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/futures/16" for 127.0.0.1 at 2018-10-11 21:53:06 +1100
+Processing by FuturesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mFuture Load (0.2ms)[0m  [1m[34mSELECT  "futures".* FROM "futures" WHERE "futures"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/futures_controller.rb:19
+  Rendering futures/show.html.erb within layouts/application
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."future_id" = ?[0m  [["future_id", 16]]
+  ↳ app/views/futures/show.html.erb:16
+  Rendered futures/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 56ms (Views: 44.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/students/15" for 127.0.0.1 at 2018-10-11 21:53:11 +1100
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:19
+  Rendering students/show.html.erb within layouts/application
+  Rendered students/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 53ms (Views: 40.2ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/login" for 127.0.0.1 at 2018-10-11 21:53:23 +1100
+Processing by SessionController#destroy as HTML
+  Parameters: {"authenticity_token"=>"OixjH0oXYlMfIOM78AXlFWxyPvhLwlobM3jrpytqydAEnnUj8XP/bjVB0ZOJVvqU02tcNS7bitGMnUQYZENIIw=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-10-11 21:53:23 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 57ms (Views: 50.7ms | ActiveRecord: 0.0ms)
+
+
